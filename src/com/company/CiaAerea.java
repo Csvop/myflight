@@ -1,6 +1,11 @@
 package com.company;
 
 public class CiaAerea {
-    private int codigo;
+    private String codigo;
     private String nome;
+
+    public CiaAerea(String umCodigo, String umNome) {
+        codigo = umCodigo;
+        nome = umNome;
+    }
 }

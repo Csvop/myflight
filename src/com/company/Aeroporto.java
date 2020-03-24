@@ -1,7 +1,7 @@
 package com.company;
 
 public class Aeroporto {
-    private int codigo;
+    private String codigo;
     private String nome;
     private Geo localizacao;
 }
