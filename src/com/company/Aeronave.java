@@ -10,4 +10,13 @@ public class Aeronave {
         this.descricao = descricao;
         this.capacidade = capacidade;
     }
+
+    @Override
+    public String toString() {
+        return "Aeronave{" +
+                "codigo='" + codigo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", capacidade=" + capacidade +
+                '}';
+    }
 }

@@ -8,4 +8,12 @@ public class CiaAerea {
         codigo = umCodigo;
         nome = umNome;
     }
+
+    @Override
+    public String toString() {
+        return "CiaAerea{" +
+                "codigo='" + codigo + '\'' +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
 }

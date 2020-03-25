@@ -10,4 +10,13 @@ public class Aeroporto {
         this.nome = nome;
         this.localizacao = localizacao;
     }
+
+    @Override
+    public String toString() {
+        return "Aeroporto{" +
+                "codigo='" + codigo + '\'' +
+                ", nome='" + nome + '\'' +
+                ", localizacao=" + localizacao +
+                '}';
+    }
 }

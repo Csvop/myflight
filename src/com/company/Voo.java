@@ -16,4 +16,15 @@ public class Voo {
         this.rota = rota;
         this.estado = estado;
     }
+
+    @Override
+    public String toString() {
+        return "Voo{" +
+                "data='" + data + '\'' +
+                ", horario='" + horario + '\'' +
+                ", duracao=" + duracao +
+                ", rota=" + rota +
+                ", estado=" + estado +
+                '}';
+    }
 }
