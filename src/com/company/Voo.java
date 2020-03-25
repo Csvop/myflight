@@ -8,4 +8,12 @@ public class Voo {
     private int duracao;
     private Rota rota;
     private Estado estado;
+
+    public Voo(String data, String horario, int duracao, Rota rota, Estado estado) {
+        this.data = data;
+        this.horario = horario;
+        this.duracao = duracao;
+        this.rota = rota;
+        this.estado = estado;
+    }
 }

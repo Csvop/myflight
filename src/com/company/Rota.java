@@ -2,7 +2,14 @@ package com.company;
 
 public class Rota {
     private Aeronave aeronave;
-    private Aeroporto aeroportoI;
-    private Aeroporto aeroportoF;
+    private Aeroporto origem;
+    private Aeroporto destino;
     private CiaAerea ciaAerea;
+
+    public Rota(CiaAerea ciaAerea, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
+        this.aeronave = aeronave;
+        this.origem = origem;
+        this.destino = destino;
+        this.ciaAerea = ciaAerea;
+    }
 }
