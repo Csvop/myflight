@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import static Voo.Estado.*;
-
 public class App {
 
     public static void main(String[] args) {
@@ -30,9 +28,9 @@ public class App {
         Rota r3 = new Rota(cia3, porto4, porto3, nave3);
         Rota r4 = new Rota(cia2, porto2, porto4, nave4);
 
-        Voo v1 = new Voo("10/08/2016", "8h", 5400, r2, ATRASADO);
-        Voo v2 = new Voo("10/08/2016", "15h", 7200, r3, CONFIRMADO);
-        Voo v3 = new Voo("15/08/2016", "12h", 7200, r1, CANCELADO);
+        Voo v1 = new Voo("10/08/2016", "8h", 5400, r2, Voo.Estado.ATRASADO);
+        Voo v2 = new Voo("10/08/2016", "15h", 7200, r3, Voo.Estado.CONFIRMADO);
+        Voo v3 = new Voo("15/08/2016", "12h", 7200, r1, Voo.Estado.CANCELADO);
 
         //Gerenciadores das Classes
         GerenciadorAeroportos gap = new GerenciadorAeroportos();
