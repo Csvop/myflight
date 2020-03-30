@@ -1,5 +1,3 @@
-package com.company;
-
 public class Aeroporto {
     private String codigo;
     private String nome;

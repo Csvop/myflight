@@ -1,8 +1,6 @@
-package com.company;
-
 import java.util.ArrayList;
 
-import static com.company.Voo.Estado.*;
+import static Voo.Estado.*;
 
 public class App {
 

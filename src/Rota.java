@@ -1,5 +1,3 @@
-package com.company;
-
 public class Rota {
     private Aeronave aeronave;
     private Aeroporto origem;

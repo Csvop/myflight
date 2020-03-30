@@ -1,5 +1,3 @@
-package com.company;
-
 public class Voo {
     public enum Estado { CONFIRMADO, ATRASADO, CANCELADO };
 
