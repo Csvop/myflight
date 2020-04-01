@@ -16,9 +16,9 @@ public class Aeronave {
     @Override
     public String toString() {
         return "Aeronave{" +
-                "codigo='" + codigo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", capacidade=" + capacidade +
+                "codigo: " + codigo + '\'' +
+                ", descricao: '" + descricao + '\'' +
+                ", capacidade: " + capacidade +
                 '}';
     }
 }

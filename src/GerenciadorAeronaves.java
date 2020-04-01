@@ -17,10 +17,10 @@ public class GerenciadorAeronaves {
     }
 
     public String toString(){
-        String a = "Gerenciador de Aeronaves\n _______________________ \n";
+        String ax = "Gerenciador de Aeronaves\n _______________________ \n";
         for (Aeronave b: lista) {
-            a = a + b.toString();
+            ax = ax + b.toString();
         }
-        return a;
+        return ax;
     }
 }
