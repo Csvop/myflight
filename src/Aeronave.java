@@ -9,6 +9,10 @@ public class Aeronave {
         this.capacidade = capacidade;
     }
 
+    public String getCodigo() {return codigo;}
+    public String getDescricao(){return descricao;}
+    public int getCapacidade(){return capacidade;}
+
     @Override
     public String toString() {
         return "Aeronave{" +
