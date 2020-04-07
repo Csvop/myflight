@@ -1,5 +1,6 @@
 import java.time.LocalDateTime;
 import java.time.Duration;
+import java.time.format.DateTimeFormatter;
 
 public class Voo {
     public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
@@ -22,10 +23,13 @@ public class Voo {
 
     @Override
     public String toString() {
-        return "Voo{" +
-                "data/hora='" + datahora + '\'' +
-                ", duracao=" + duracao +
-                ", rota=" + rota +
-                ", estado=" + status +'}';
+        return String.format("%10s %7s %10s [%1s:%1s-%1s] %10s",
+                datahora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                datahora.format(DateTimeFormatter.ofPattern("HH:mm")),
+                duracao,
+                rota.getCiaAerea().getCodigo(),
+                rota.getOrigem().getCodigo(),
+                rota.getDestino().getCodigo(),
+                status);
     }
 }

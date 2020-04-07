@@ -17,8 +17,8 @@ public class CiaAerea {
 
     @Override
     public String toString() {
-        return "CiaAerea{" +
-                "codigo='" + codigo + '\'' +
-                ", nome='" + nome + '\'' +'}';
+        return String.format("%4s %25s",
+                codigo,
+                nome);
     }
 }

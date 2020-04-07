@@ -28,6 +28,7 @@ public class GerenciadorAeronaves {
     @Override
     public String toString(){
         String ax = "Gerenciador de Aeronaves\n _______________________ \n";
+        ax+=String.format("%3s %29s %13s", "Código","Descrição","Capacidade")+"\n";
         for (Aeronave a: lista) {
             ax += a.toString()+"\n";
         }

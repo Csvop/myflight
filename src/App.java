@@ -31,7 +31,7 @@ public class App {
         Rota r1=new Rota(ciasAereas.search("G3" ),aeroportos.search("GRU"),aeroportos.search("POA"),aeronaves.search ("738"));
         Rota r2=new Rota(ciasAereas.search("G3" ),aeroportos.search("POA"),aeroportos.search("GRU"),aeronaves.search ("738"));
         Rota r3=new Rota(ciasAereas.search("TP" ),aeroportos.search("MIA"),aeroportos.search("LIS"),aeronaves.search ("332"));
-        Rota r4=new Rota(ciasAereas.search("JJ" ),aeroportos.search("GRU"),aeroportos.search("GIG"),aeronaves.search ("320"));
+        Rota r4=new Rota(ciasAereas.search("JJ" ),aeroportos.search("GRU"),aeroportos.search("LIS"),aeronaves.search ("320"));
         rotas.insert(r1);rotas.insert(r2);rotas.insert(r3);rotas.insert(r4);
 
         GerenciadorVoos voos = GerenciadorVoos.getInstance();
@@ -40,7 +40,6 @@ public class App {
         voos.insert(new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120), r1, Voo.Status.CANCELADO));
 
         System.out.println(ciasAereas.toString());
-        System.out.println(aeronaves.toString());
         System.out.println(aeronaves.toString());
         System.out.println(aeroportos.toString());
         System.out.println(rotas.toString());

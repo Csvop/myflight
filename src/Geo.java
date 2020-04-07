@@ -9,9 +9,8 @@ public class Geo {
 
     @Override
     public String toString() {
-        return "Geo{" +
-                "latitude=" + latitude +
-                ", longitude=" + longitude +
-                '}';
+        return String.format("[%8s] [%8s] ",
+                latitude,
+                longitude);
     }
 }

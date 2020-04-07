@@ -19,12 +19,16 @@ public class Rota {
     public Aeroporto getDestino(){
         return destino;
     }
+
+    public CiaAerea getCiaAerea(){
+        return ciaAerea;
+    }
     @Override
     public String toString() {
-        return "Rota{" +
-                "aeronave=" + aeronave +
-                ", origem=" + origem +
-                ", destino=" + destino +
-                ", ciaAerea=" + ciaAerea +'}';
+        return String.format("%8s %10s %10s %10s",
+                ciaAerea.getCodigo(),
+                origem.getCodigo(),
+                destino.getCodigo(),
+                aeronave.getCodigo());
     }
 }

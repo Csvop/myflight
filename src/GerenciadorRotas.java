@@ -37,6 +37,7 @@ public class GerenciadorRotas {
     @Override
     public String toString(){
         String ax = "Gerenciador de Rotas\n _______________________ \n";
+        ax+=String.format("%10s %10s %10s %10s", "Cia Aérea","Origem","Destino","Aeronave")+"\n";
         for (Rota r: lista) {
             ax += r.toString()+"\n";
         }

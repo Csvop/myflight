@@ -29,6 +29,7 @@ public class GerenciadorAeroportos {
     @Override
     public String toString(){
         String ax = "Gerenciador de Aeroportos\n _______________________ \n";
+        ax+=String.format("%3s %29s %12s %10s", "Código","Nome","Latitiude","Longitude")+"\n";
         for (Aeroporto b: lista) {
             ax += b.toString()+"\n";
         }

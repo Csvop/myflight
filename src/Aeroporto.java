@@ -15,9 +15,9 @@ public class Aeroporto {
 
     @Override
     public String toString() {
-        return "Aeroporto{" +
-                "codigo='" + codigo + '\'' +
-                ", nome='" + nome + '\'' +
-                ", localizacao=" + localizacao +'}';
+        return String.format("[%3s] %30s %25s",
+                codigo,
+                nome,
+                localizacao);
     }
 }

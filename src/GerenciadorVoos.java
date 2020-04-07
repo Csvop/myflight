@@ -30,6 +30,7 @@ public class GerenciadorVoos {
     @Override
     public String toString(){
         String ax = "Gerenciador de Voos\n _______________________ \n";
+        ax+=String.format("%7s %11s %10s %6s %15s","Data","Horário","Duração","Rota","Estado")+"\n";
         for (Voo r: lista) {
             ax += r.toString()+"\n";
         }

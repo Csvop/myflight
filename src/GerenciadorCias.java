@@ -37,6 +37,7 @@ public class GerenciadorCias {
     @Override
     public String toString(){
         String ax = "Gerenciador de Companhias Aereas\n _______________________ \n";
+        ax+=String.format("%4s %23s", "Código","Nome")+"\n";
         for (CiaAerea c: lista) {
             ax += c.toString()+"\n";
         }
