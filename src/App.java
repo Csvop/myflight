@@ -6,8 +6,8 @@ public class App {
     public static void main(String[] args) {
         Geo coord1 = new Geo(-29.9939, -51.1711);
         Geo coord2 = new Geo(-23.4356, -46.4731);
-        Geo coord3 = new Geo(38.7742, -9.1342);
-        Geo coord4 = new Geo(25.7933, -80.2906);
+        Geo coord3 = new Geo(38.7742 , -9.1342 );
+        Geo coord4 = new Geo(25.7933 , -80.2906);
 
         GerenciadorCias ciasAereas = GerenciadorCias.getInstance();
         ciasAereas.insert(new CiaAerea("G3", "Gol Linhas Aéreas SA"));
@@ -28,21 +28,21 @@ public class App {
         aeroportos.insert(new Aeroporto("MIA", "Miami International Apt", coord4));
 
         GerenciadorRotas rotas = GerenciadorRotas.getInstance();
-        Rota r1=new Rota(ciasAereas.search("G3" ),aeroportos.search("GRU"),aeroportos.search("POA"),aeronaves.search ("738"));
-        Rota r2=new Rota(ciasAereas.search("G3" ),aeroportos.search("POA"),aeroportos.search("GRU"),aeronaves.search ("738"));
-        Rota r3=new Rota(ciasAereas.search("TP" ),aeroportos.search("MIA"),aeroportos.search("LIS"),aeronaves.search ("332"));
-        Rota r4=new Rota(ciasAereas.search("JJ" ),aeroportos.search("GRU"),aeroportos.search("LIS"),aeronaves.search ("320"));
+        Rota r1=new Rota(ciasAereas.search("G3"),aeroportos.search("GRU"),aeroportos.search("POA"),aeronaves.search("738"));
+        Rota r2=new Rota(ciasAereas.search("G3"),aeroportos.search("POA"),aeroportos.search("GRU"),aeronaves.search("738"));
+        Rota r3=new Rota(ciasAereas.search("TP"),aeroportos.search("MIA"),aeroportos.search("LIS"),aeronaves.search("332"));
+        Rota r4=new Rota(ciasAereas.search("JJ"),aeroportos.search("GRU"),aeroportos.search("LIS"),aeronaves.search("320"));
         rotas.insert(r1);rotas.insert(r2);rotas.insert(r3);rotas.insert(r4);
 
         GerenciadorVoos voos = GerenciadorVoos.getInstance();
-        voos.insert(new Voo(LocalDateTime.of(2016, 8, 10, 8, 0), Duration.ofMinutes(90), r2, Voo.Status.ATRASADO));
+        voos.insert(new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r2, Voo.Status.ATRASADO  ));
         voos.insert(new Voo(LocalDateTime.of(2016, 8, 10, 15, 0), Duration.ofMinutes(120),r3, Voo.Status.CONFIRMADO));
-        voos.insert(new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120), r1, Voo.Status.CANCELADO));
+        voos.insert(new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120),r1, Voo.Status.CANCELADO ));
 
         System.out.println(ciasAereas.toString());
-        System.out.println(aeronaves.toString());
+        System.out.println( aeronaves.toString());
         System.out.println(aeroportos.toString());
-        System.out.println(rotas.toString());
-        System.out.println(voos.toString());
+        System.out.println(     rotas.toString());
+        System.out.println(      voos.toString());
     }
 }
