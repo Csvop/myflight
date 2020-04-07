@@ -1,28 +1,31 @@
+import java.time.LocalDateTime;
+import java.time.Duration;
+
 public class Voo {
-    public enum Estado { CONFIRMADO, ATRASADO, CANCELADO };
+    public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
 
-    private String data;
-    private String horario;
-    private int duracao;
+    private LocalDateTime datahora;
+    private Duration duracao;
     private Rota rota;
-    private Estado estado;
+    private Status status;
 
-    public Voo(String data, String horario, int duracao, Rota rota, Estado estado) {
-        this.data = data;
-        this.horario = horario;
+    public Voo(LocalDateTime datahora, Duration duracao, Rota rota, Status status) {
+        this.datahora=datahora;
         this.duracao = duracao;
         this.rota = rota;
-        this.estado = estado;
+        this.status = status;
+    }
+
+    public LocalDateTime getDate(){
+        return datahora;
     }
 
     @Override
     public String toString() {
         return "Voo{" +
-                "data='" + data + '\'' +
-                ", horario='" + horario + '\'' +
+                "data/hora='" + datahora + '\'' +
                 ", duracao=" + duracao +
                 ", rota=" + rota +
-                ", estado=" + estado +
-                '}';
+                ", estado=" + status +'}';
     }
 }

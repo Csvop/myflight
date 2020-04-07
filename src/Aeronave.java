@@ -18,7 +18,6 @@ public class Aeronave {
         return "Aeronave{" +
                 "codigo: " + codigo + '\'' +
                 ", descricao: '" + descricao + '\'' +
-                ", capacidade: " + capacidade +
-                '}';
+                ", capacidade: " + capacidade +'}';
     }
 }

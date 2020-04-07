@@ -1,25 +1,35 @@
 import java.util.ArrayList;
 public class GerenciadorAeronaves {
     private ArrayList<Aeronave> lista;
+
     private GerenciadorAeronaves() {lista = new ArrayList<>();}
+
     private static GerenciadorAeronaves instance;
 
-    public void adicionar(String codigo, String descricao, int capacidade){
-        lista.add(new Aeronave(codigo, descricao, capacidade));
+    public static GerenciadorAeronaves getInstance(){
+        if(instance==null){
+            instance= new GerenciadorAeronaves();
+        }
+        return instance;
     }
 
-    public Aeronave buscarPorCodigo(String codigo){
-        for(Aeronave cod:lista){
-            if(cod.getCodigo() == codigo)
-                return cod;
+    public void insert(Aeronave aeronave){
+        lista.add(aeronave);
+    }
+
+    public Aeronave search(String codigo){
+        for(Aeronave a:lista){
+            if(a.getCodigo().equals(codigo))
+                return a;
         }
         return null;
     }
 
+    @Override
     public String toString(){
         String ax = "Gerenciador de Aeronaves\n _______________________ \n";
-        for (Aeronave b: lista) {
-            ax = ax + b.toString();
+        for (Aeronave a: lista) {
+            ax += a.toString()+"\n";
         }
         return ax;
     }

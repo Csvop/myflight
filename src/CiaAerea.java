@@ -7,14 +7,18 @@ public class CiaAerea {
         nome = umNome;
     }
 
-    //teste git
-    //teste2
+    public String getCodigo(){
+        return codigo;
+    }
+
+    public String getNome(){
+        return nome;
+    }
 
     @Override
     public String toString() {
         return "CiaAerea{" +
                 "codigo='" + codigo + '\'' +
-                ", nome='" + nome + '\'' +
-                '}';
+                ", nome='" + nome + '\'' +'}';
     }
 }

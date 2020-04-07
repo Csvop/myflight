@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.Duration;
 
 public class App {
 
@@ -8,35 +9,41 @@ public class App {
         Geo coord3 = new Geo(38.7742, -9.1342);
         Geo coord4 = new Geo(25.7933, -80.2906);
 
-        CiaAerea cia1 = new CiaAerea("G3", "Gol Linhas Aéreas SA");
-        CiaAerea cia2 = new CiaAerea("JJ", "LATAM Linhas Aéreas");
-        CiaAerea cia3 = new CiaAerea("TP", "TAP Portugal");
-        CiaAerea cia4 = new CiaAerea("AD", "Azul Linhas Aéreas");
+        GerenciadorCias ciasAereas = GerenciadorCias.getInstance();
+        ciasAereas.insert(new CiaAerea("G3", "Gol Linhas Aéreas SA"));
+        ciasAereas.insert(new CiaAerea("JJ", "LATAM Linhas Aéreas"));
+        ciasAereas.insert(new CiaAerea("TP", "TAP Portugal"));
+        ciasAereas.insert(new CiaAerea("AD", "Azul Linhas Aéreas"));
 
-        Aeronave nave1 = new Aeronave("733", "Boeing 737-300", 140);
-        Aeronave nave2 = new Aeronave("73G", "Boeing 737-700", 126);
-        Aeronave nave3 = new Aeronave("380", "Airbus Industries A380", 644);
-        Aeronave nave4 = new Aeronave("764", "Boeing 767-400", 304);
+        GerenciadorAeronaves aeronaves = GerenciadorAeronaves.getInstance();
+        aeronaves.insert(new Aeronave("733", "Boeing 737-300", 140));
+        aeronaves.insert(new Aeronave("738", "Boeing 737-700", 126));
+        aeronaves.insert(new Aeronave("332", "Airbus Industries A380", 644));
+        aeronaves.insert(new Aeronave("320", "Boeing 767-400", 304));
 
-        Aeroporto porto1 = new Aeroporto("POA", "Salgado Filho Intl Apt", coord1);
-        Aeroporto porto2 = new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", coord2);
-        Aeroporto porto3 = new Aeroporto("LIS", "Lisbon", coord3);
-        Aeroporto porto4 = new Aeroporto("MIA", "Miami International Apt", coord4);
+        GerenciadorAeroportos aeroportos = GerenciadorAeroportos.getInstance();
+        aeroportos.insert(new Aeroporto("POA", "Salgado Filho Intl Apt", coord1));
+        aeroportos.insert(new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", coord2));
+        aeroportos.insert(new Aeroporto("LIS", "Lisbon", coord3));
+        aeroportos.insert(new Aeroporto("MIA", "Miami International Apt", coord4));
 
-        Rota r1 = new Rota(cia1, porto2, porto1, nave1);
-        Rota r2 = new Rota(cia1, porto1, porto2, nave1);
-        Rota r3 = new Rota(cia3, porto4, porto3, nave3);
-        Rota r4 = new Rota(cia2, porto2, porto4, nave4);
+        GerenciadorRotas rotas = GerenciadorRotas.getInstance();
+        Rota r1=new Rota(ciasAereas.search("G3" ),aeroportos.search("GRU"),aeroportos.search("POA"),aeronaves.search ("738"));
+        Rota r2=new Rota(ciasAereas.search("G3" ),aeroportos.search("POA"),aeroportos.search("GRU"),aeronaves.search ("738"));
+        Rota r3=new Rota(ciasAereas.search("TP" ),aeroportos.search("MIA"),aeroportos.search("LIS"),aeronaves.search ("332"));
+        Rota r4=new Rota(ciasAereas.search("JJ" ),aeroportos.search("GRU"),aeroportos.search("GIG"),aeronaves.search ("320"));
+        rotas.insert(r1);rotas.insert(r2);rotas.insert(r3);rotas.insert(r4);
 
-        Voo v1 = new Voo("10/08/2016", "8h", 5400, r2, Voo.Estado.ATRASADO);
-        Voo v2 = new Voo("10/08/2016", "15h", 7200, r3, Voo.Estado.CONFIRMADO);
-        Voo v3 = new Voo("15/08/2016", "12h", 7200, r1, Voo.Estado.CANCELADO);
+        GerenciadorVoos voos = GerenciadorVoos.getInstance();
+        voos.insert(new Voo(LocalDateTime.of(2016, 8, 10, 8, 0), Duration.ofMinutes(90), r2, Voo.Status.ATRASADO));
+        voos.insert(new Voo(LocalDateTime.of(2016, 8, 10, 15, 0), Duration.ofMinutes(120),r3, Voo.Status.CONFIRMADO));
+        voos.insert(new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120), r1, Voo.Status.CANCELADO));
 
-        //Gerenciadores das Classes
-        GerenciadorAeroportos gap = new GerenciadorAeroportos();
-
-        ArrayList<Aeroporto> listaAp = gap.list();
-
-        System.out.println(listaAp);
+        System.out.println(ciasAereas.toString());
+        System.out.println(aeronaves.toString());
+        System.out.println(aeronaves.toString());
+        System.out.println(aeroportos.toString());
+        System.out.println(rotas.toString());
+        System.out.println(voos.toString());
     }
 }
