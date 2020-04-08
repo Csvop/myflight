@@ -17,6 +17,9 @@ public class Voo {
         this.status = status;
     }
 
+    public Rota getRota(){
+        return rota;
+    }
     public LocalDateTime getDate(){
         return datahora;
     }
