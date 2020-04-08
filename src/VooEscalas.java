@@ -15,8 +15,8 @@ public class VooEscalas extends Voo {
 
     public Rota getRota() {return rota;}
     public Rota getRotaFinal() {return rotaFinal;}
-    //public LocalDateTime getDatahora() {}
-    //public Duration getDuracao() {}
+    public LocalDateTime getDatahora() {}
+    public Duration getDuracao() {}
 
     @Override
     public String toString(){
