@@ -3,9 +3,10 @@ public class Rota {
     private Aeroporto origem;
     private Aeroporto destino;
     private Aeronave aeronave;
-
+    private static int contRotas;
 
     public Rota(CiaAerea ciaAerea, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
+        contRotas++;
         this.aeronave = aeronave;
         this.origem = origem;
         this.destino = destino;
@@ -15,14 +16,14 @@ public class Rota {
     public Aeroporto getOrigem(){
         return origem;
     }
-
     public Aeroporto getDestino(){
         return destino;
     }
-
     public CiaAerea getCiaAerea(){
         return ciaAerea;
     }
+    public int getContRotas(){return contRotas;}
+
     @Override
     public String toString() {
         return String.format("%8s %10s %10s %10s",

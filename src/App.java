@@ -57,6 +57,6 @@ public class App {
         System.out.println(aeroportos.toString());
         System.out.println(     rotas.toString());
         System.out.println(      voos.toString());
-        System.out.println(viagens.toString());
+        System.out.println(   viagens.toString());
     }
 }

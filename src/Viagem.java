@@ -10,7 +10,6 @@ public class Viagem {
     public Voo getOrigem(){
         return origem;
     }
-
     public Voo getDestino(){
         return destino;
     }

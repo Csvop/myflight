@@ -2,8 +2,10 @@ public class Aeroporto {
     private String codigo;
     private String nome;
     private Geo localizacao;
+    private static int contAeroportos=0;
 
     public Aeroporto(String codigo, String nome, Geo localizacao) {
+        contAeroportos++;
         this.codigo = codigo;
         this.nome = nome;
         this.localizacao = localizacao;
@@ -12,6 +14,7 @@ public class Aeroporto {
     public String getCodigo() {return codigo;}
     public String getNome(){return nome;}
     public Geo getLocalizacao(){return localizacao;}
+    public int getContAeroportos(){return contAeroportos;}
 
     @Override
     public String toString() {

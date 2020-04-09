@@ -4,25 +4,29 @@ import java.time.format.DateTimeFormatter;
 
 public class Voo {
     public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
-
     private LocalDateTime datahora;
     private Duration duracao;
     private Rota rota;
     private Status status;
+    private static int contVoos=0;
 
     public Voo(LocalDateTime datahora, Duration duracao, Rota rota, Status status) {
+        contVoos++;
         this.datahora=datahora;
         this.duracao = duracao;
         this.rota = rota;
         this.status = status;
     }
 
-    public Rota getRota(){
-        return rota;
-    }
     public LocalDateTime getDate(){
         return datahora;
     }
+    public Duration getDuracao(){return duracao;}
+    public Rota getRota(){
+        return rota;
+    }
+    public Status getStatus(){return status;}
+    public int getContVoos(){return contVoos;}
 
     @Override
     public String toString() {
