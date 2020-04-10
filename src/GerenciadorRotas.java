@@ -28,7 +28,7 @@ public class GerenciadorRotas {
 
     public Rota searchDestino(Aeroporto destino){
         for(Rota r:lista){
-            if(r.getOrigem()==destino)
+            if(r.getDestino()==destino)
                 return r;
         }
         return null;

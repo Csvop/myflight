@@ -20,7 +20,7 @@ public class GerenciadorAeroportos {
 
     public Aeroporto search(String codigo){
         for(Aeroporto a:lista){
-            if(a.getCodigo() == codigo)
+            if(a.getCodigo().equals(codigo))
                 return a;
         }
         return null;

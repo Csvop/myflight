@@ -7,6 +7,18 @@ public class Geo {
         this.longitude = longitude;
     }
 
+    public static double distancia(Geo pontoA, Geo pontoB){
+        double latA=Math.toRadians(pontoA.latitude);
+        double latB=Math.toRadians(pontoB.latitude);
+        double lonA=Math.toRadians(pontoA.longitude);
+        double lonB=Math.toRadians(pontoB.longitude);
+        double dLat = (latA-latB); //diferença das latitudes dos pontos em radianos
+        double dLon = (lonA-lonB); //diferença das longitudes dos pontos em radianos
+        double a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(latA) * Math.cos(latB) * Math.sin(dLon/2) * Math.sin(dLon/2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return 6371 * c;
+    }
+
     @Override
     public String toString() {
         return String.format("[%8s] [%8s] ",

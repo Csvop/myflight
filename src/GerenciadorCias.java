@@ -20,7 +20,7 @@ public class GerenciadorCias {
 
     public CiaAerea search(String codigo){
         for(CiaAerea c:lista){
-            if(c.getCodigo() == codigo)
+            if(c.getCodigo().equals(codigo))
                 return c;
         }
         return null;
@@ -28,7 +28,7 @@ public class GerenciadorCias {
 
     public CiaAerea searchName(String nome){
         for(CiaAerea c:lista){
-            if(c.getNome() == nome)
+            if(c.getNome().equals(nome))
                 return c;
         }
         return null;
