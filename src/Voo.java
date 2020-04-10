@@ -18,6 +18,14 @@ public class Voo {
         this.status = status;
     }
 
+    public Voo(Duration duracao, Rota rota, Status status) {
+        contVoos++;
+        this.datahora=LocalDateTime.of(2016, 8, 12, 12,  0);
+        this.duracao = duracao;
+        this.rota = rota;
+        this.status = status;
+    }
+
     public LocalDateTime getDate(){
         return datahora;
     }
