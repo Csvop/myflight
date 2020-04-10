@@ -27,6 +27,29 @@ public class GerenciadorVoos {
         return null;
     }
 
+    public void search(String origem,String destino){
+        Aeroporto desembarque;
+        for(Voo v1:lista){
+            if(v1.getRota().getOrigem().getCodigo().equals(origem)){
+                desembarque=v1.getRota().getDestino();
+                if(desembarque.equals(destino)){
+                    System.out.println("Voo Direto:");
+                    System.out.println(v1.toString());
+                }else{
+                    for(Voo v2:lista){
+                        if(v2.getRota().getOrigem().getCodigo().equals(desembarque.getCodigo())){
+                            if(v2.getRota().getDestino().getCodigo().equals(destino)) {
+                                System.out.println("Voo com escala em: "+"["+desembarque.getCodigo()+"] "+desembarque.getNome());
+                                System.out.println(v1.toString());
+                                System.out.println(v2.toString());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     @Override
     public String toString(){
         String ax = "Gerenciador de Voos\n _______________________ \n";

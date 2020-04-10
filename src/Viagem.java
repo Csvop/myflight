@@ -13,4 +13,12 @@ public class Viagem {
     public Voo getDestino(){
         return destino;
     }
+
+    @Override
+    public String toString(){
+        return "Viagem: \n"
+                +"Origem: "+origem.toString()
+                +"\nDestino: "+destino.toString()
+                +"\n----------------------------";
+    }
 }

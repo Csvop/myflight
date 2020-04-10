@@ -26,7 +26,7 @@ public class App {
         aeroportos.insert(new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", coord2));
         aeroportos.insert(new Aeroporto("LIS", "Lisbon", coord3));
         aeroportos.insert(new Aeroporto("MIA", "Miami International Apt", coord4));
-        aeroportos.insert(new Aeroporto("CGR", "Miami International Apt", coord4));
+        aeroportos.insert(new Aeroporto("CGR", "Aeroporto de Campo Grande", coord4));
 
         GerenciadorRotas rotas = GerenciadorRotas.getInstance();
         Rota r0=new Rota(ciasAereas.search("TP"),aeroportos.search("CGR"),aeroportos.search("GRU"),aeronaves.search("320"));
@@ -38,25 +38,20 @@ public class App {
 
         GerenciadorVoos voos = GerenciadorVoos.getInstance();
         Voo v0=new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r0, Voo.Status.ATRASADO  );
-        Voo v1=new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r2, Voo.Status.ATRASADO  );
+        Voo v1=new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r2, Voo.Status.CANCELADO  );
         Voo v2=new Voo(LocalDateTime.of(2016, 8, 10, 15, 0), Duration.ofMinutes(120),r3, Voo.Status.CONFIRMADO);
-        Voo v3=new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120),r1, Voo.Status.CANCELADO );
+        Voo v3=new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120),r1, Voo.Status.CONFIRMADO );
+        voos.insert(v0);voos.insert(v1);voos.insert(v2);voos.insert(v3);
 
-        voos.insert(v0);
-        voos.insert(v1);
-        voos.insert(v2);
-        voos.insert(v3);
-
-
-        GerenciadorViagem viagens = GerenciadorViagem.getInstance();
-        viagens.insert(v0,v3);
-
+        //GerenciadorViagem viagens = GerenciadorViagem.getInstance();
+        //viagens.insert(v0,v3);
 
         System.out.println(ciasAereas.toString());
         System.out.println( aeronaves.toString());
         System.out.println(aeroportos.toString());
         System.out.println(     rotas.toString());
         System.out.println(      voos.toString());
-        System.out.println(   viagens.toString());
+        voos.search("CGR","POA");
+        //System.out.println(   viagens.toString());
     }
 }

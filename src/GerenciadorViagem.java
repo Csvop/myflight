@@ -15,21 +15,21 @@ public class GerenciadorViagem {
         return instance;
     }
 
-    public void insert(Voo origem,Voo destino){
-        lista.add(new Viagem(origem,destino));
-    }
-
-
     public Viagem search(String codOrigem, String codDestino)
     {
         for(Viagem v:lista){
             if(v.getOrigem().getRota().getOrigem().getCodigo().equals(codOrigem)
-               && v.getOrigem().getRota().getOrigem().getCodigo().equals(codDestino)){
+                    && v.getOrigem().getRota().getOrigem().getCodigo().equals(codDestino)){
                 return v;
             }
         }
         return null;
     }
+
+    public void insert(Voo origem,Voo destino){
+        lista.add(new Viagem(origem,destino));
+    }
+
 
     @Override
     public String toString() {
