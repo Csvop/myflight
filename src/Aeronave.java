@@ -1,4 +1,4 @@
-public class Aeronave {
+public class Aeronave implements Imprimivel, Contavel, Comparable<Aeronave> {
     private String codigo;
     private String descricao;
     private int capacidade;
@@ -22,5 +22,20 @@ public class Aeronave {
                 codigo,
                 descricao,
                 capacidade);
+    }
+
+    public String imprimir() {
+        return String.format("[%3s] %30s %10d",
+                codigo,
+                descricao,
+                capacidade);
+    }
+
+    public int getTotal() {
+        return contAeronaves;
+    }
+
+    public int compareTo(Aeronave outra) {
+        return descricao.compareTo(outra.descricao);
     }
 }

@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class GerenciadorVoos {
+public class GerenciadorVoos implements Contrato{
     private ArrayList<Voo> lista;
 
     private GerenciadorVoos() {lista = new ArrayList<>();}

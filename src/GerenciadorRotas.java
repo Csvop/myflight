@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class GerenciadorRotas {
+public class GerenciadorRotas implements Contrato{
     private ArrayList<Rota> lista;
 
     private GerenciadorRotas() {lista = new ArrayList<>();}

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class GerenciadorAeroportos {
+public class GerenciadorAeroportos implements Contrato{
     private ArrayList<Aeroporto> lista;
 
     private GerenciadorAeroportos() {lista = new ArrayList<>();}

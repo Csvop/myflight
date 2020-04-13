@@ -10,8 +10,7 @@ public class Voo {
     private Status status;
     private static int contVoos=0;
 
-    public Voo(LocalDateTime datahora, Duration duracao, Rota rota, Status status) {
-        contVoos++;
+   public Voo(LocalDateTime datahora, Duration duracao, Rota rota, Status status) {       contVoos++;
         this.datahora=datahora;
         this.duracao = duracao;
         this.rota = rota;
