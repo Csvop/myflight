@@ -1,3 +1,4 @@
+import java.util.Comparator;
 public class Aeronave implements Imprimivel, Contavel, Comparable<Aeronave> {
     private String codigo;
     private String descricao;
@@ -36,6 +37,15 @@ public class Aeronave implements Imprimivel, Contavel, Comparable<Aeronave> {
     }
 
     public int compareTo(Aeronave outra) {
-        return descricao.compareTo(outra.descricao);
+        return this.descricao.compareTo(outra.descricao);
     }
+
+    public static Comparator<Aeronave> getCompCapacidade(){
+        return new Comparator<Aeronave>(){
+            public int compare(Aeronave a1, Aeronave a2){
+                return a2.capacidade - a1.capacidade;
+            }
+        };
+    }
+
 }

@@ -1,3 +1,4 @@
+import java.util.Comparator;
 public interface Comparable<Aeronave> {
-    public int compareTo(Aeronave outraAeronave);
+     int compareTo(Aeronave outraAeronave);
 }

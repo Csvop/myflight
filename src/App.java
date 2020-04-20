@@ -1,5 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.Duration;
+import java.util.Collection;
+import java.util.Collections;
 
 public class App {
 
@@ -20,6 +22,8 @@ public class App {
         aeronaves.insert(new Aeronave("738", "Boeing 737-700", 126));
         aeronaves.insert(new Aeronave("332", "Airbus Industries A380", 644));
         aeronaves.insert(new Aeronave("320", "Boeing 767-400", 304));
+
+        Collections.sort(aeronaves.getList(), Aeronave.getCompCapacidade());
 
         GerenciadorAeroportos aeroportos = GerenciadorAeroportos.getInstance();
         aeroportos.insert(new Aeroporto("POA", "Salgado Filho Intl Apt", coord1));
@@ -53,6 +57,12 @@ public class App {
         System.out.println(      voos.toString());
         voos.search("CGR","POA");
         //System.out.println(   viagens.toString());
+
+        for (Object a: aeronaves.getList()) {
+            System.out.println(a);
+        }
+
+
 
 
     }

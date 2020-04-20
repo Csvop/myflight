@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class GerenciadorAeronaves implements Contrato {
-    private ArrayList<Aeronave> lista;
+    private List<Aeronave> lista;
 
     private GerenciadorAeronaves() {lista = new ArrayList<>();}
 
@@ -34,5 +35,9 @@ public class GerenciadorAeronaves implements Contrato {
             ax += a.toString()+"\n";
         }
         return ax;
+    }
+
+    public List getList() {
+        return lista;
     }
 }
