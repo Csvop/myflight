@@ -1,12 +1,12 @@
-public class CiaAerea {
+public class CiaAerea implements Contavel{
     private String codigo;
     private String nome;
     private static int contCias=0;
 
-    public CiaAerea(String umCodigo, String umNome) {
+    public CiaAerea(String codigo, String nome) {
         contCias++;
-        codigo = umCodigo;
-        nome = umNome;
+        this.codigo = codigo;
+        this.nome = nome;
     }
 
     public String getCodigo(){
@@ -15,7 +15,7 @@ public class CiaAerea {
     public String getNome(){
         return nome;
     }
-    public int getContCias(){return contCias;}
+    public int getCont(){return contCias;}
 
     @Override
     public String toString() {

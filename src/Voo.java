@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.time.Duration;
 import java.time.format.DateTimeFormatter;
 
-public class Voo {
+public class Voo implements Contavel{
     public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
     private LocalDateTime datahora;
     private Duration duracao;
@@ -10,7 +10,8 @@ public class Voo {
     private Status status;
     private static int contVoos=0;
 
-   public Voo(LocalDateTime datahora, Duration duracao, Rota rota, Status status) {       contVoos++;
+   public Voo(LocalDateTime datahora, Duration duracao, Rota rota, Status status) {
+        contVoos++;
         this.datahora=datahora;
         this.duracao = duracao;
         this.rota = rota;
@@ -33,7 +34,7 @@ public class Voo {
         return rota;
     }
     public Status getStatus(){return status;}
-    public int getContVoos(){return contVoos;}
+    public int getCont(){return contVoos;}
 
     @Override
     public String toString() {

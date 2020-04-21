@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class GerenciadorRotas implements Contrato{
+public class GerenciadorRotas {
     private ArrayList<Rota> lista;
 
     private GerenciadorRotas() {lista = new ArrayList<>();}
@@ -32,6 +33,16 @@ public class GerenciadorRotas implements Contrato{
                 return r;
         }
         return null;
+    }
+
+    public List getList() {
+        return lista;
+    }
+
+    public void print(){
+        for (Object a: lista) {
+            System.out.println(a);
+        }
     }
 
     @Override

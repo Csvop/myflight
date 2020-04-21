@@ -1,3 +1,3 @@
 interface Contavel {
-    int getTotal();
+    int getCont();
 }

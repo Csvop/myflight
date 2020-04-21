@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciadorAeronaves implements Contrato {
+public class GerenciadorAeronaves {
     private List<Aeronave> lista;
 
     private GerenciadorAeronaves() {lista = new ArrayList<>();}
@@ -27,6 +27,16 @@ public class GerenciadorAeronaves implements Contrato {
         return null;
     }
 
+    public List getList() {
+        return lista;
+    }
+
+    public void print(){
+        for (Object a: lista) {
+            System.out.println(a);
+        }
+    }
+
     @Override
     public String toString(){
         String ax = "Gerenciador de Aeronaves\n _______________________ \n";
@@ -35,9 +45,5 @@ public class GerenciadorAeronaves implements Contrato {
             ax += a.toString()+"\n";
         }
         return ax;
-    }
-
-    public List getList() {
-        return lista;
     }
 }

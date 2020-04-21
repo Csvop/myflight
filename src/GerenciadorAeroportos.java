@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class GerenciadorAeroportos implements Contrato{
-    private ArrayList<Aeroporto> lista;
+public class GerenciadorAeroportos {
+    private List<Aeroporto> lista;
 
     private GerenciadorAeroportos() {lista = new ArrayList<>();}
 
@@ -24,6 +25,16 @@ public class GerenciadorAeroportos implements Contrato{
                 return a;
         }
         return null;
+    }
+
+    public List getList() {
+        return lista;
+    }
+
+    public void print(){
+        for (Object a: lista) {
+            System.out.println(a);
+        }
     }
 
     @Override

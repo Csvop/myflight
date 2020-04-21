@@ -23,8 +23,6 @@ public class App {
         aeronaves.insert(new Aeronave("332", "Airbus Industries A380", 644));
         aeronaves.insert(new Aeronave("320", "Boeing 767-400", 304));
 
-        Collections.sort(aeronaves.getList(), Aeronave.getCompCapacidade());
-
         GerenciadorAeroportos aeroportos = GerenciadorAeroportos.getInstance();
         aeroportos.insert(new Aeroporto("POA", "Salgado Filho Intl Apt", coord1));
         aeroportos.insert(new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", coord2));
@@ -33,7 +31,7 @@ public class App {
         aeroportos.insert(new Aeroporto("CGR", "Aeroporto de Campo Grande", coord4));
 
         GerenciadorRotas rotas = GerenciadorRotas.getInstance();
-        Rota r0=new Rota(ciasAereas.search("TP"),aeroportos.search("CGR"),aeroportos.search("GRU"),aeronaves.search("320"));
+        Rota r0=new Rota(ciasAereas.search("AD"),aeroportos.search("CGR"),aeroportos.search("GRU"),aeronaves.search("320"));
         Rota r1=new Rota(ciasAereas.search("G3"),aeroportos.search("GRU"),aeroportos.search("POA"),aeronaves.search("738"));
         Rota r2=new Rota(ciasAereas.search("G3"),aeroportos.search("POA"),aeroportos.search("GRU"),aeronaves.search("738"));
         Rota r3=new Rota(ciasAereas.search("TP"),aeroportos.search("MIA"),aeroportos.search("LIS"),aeronaves.search("332"));
@@ -47,23 +45,19 @@ public class App {
         Voo v3=new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120),r1, Voo.Status.CONFIRMADO );
         voos.insert(v0);voos.insert(v1);voos.insert(v2);voos.insert(v3);
 
-        //GerenciadorViagem viagens = GerenciadorViagem.getInstance();
-        //viagens.insert(v0,v3);
-
-        System.out.println(ciasAereas.toString());
-        System.out.println( aeronaves.toString());
-        System.out.println(aeroportos.toString());
-        System.out.println(     rotas.toString());
-        System.out.println(      voos.toString());
+        System.out.println(ciasAereas);
+        System.out.println( aeronaves);
+        System.out.println(aeroportos);
+        System.out.println(     rotas);
+        System.out.println(      voos);
         voos.search("CGR","POA");
-        //System.out.println(   viagens.toString());
 
-        for (Object a: aeronaves.getList()) {
-            System.out.println(a);
-        }
+        Collections.sort(aeronaves.getList(), Aeronave.compare());
+        Collections.sort(rotas.getList(), Rota.compare());
+        Collections.sort(aeroportos.getList(), Aeroporto.compare());
 
-
-
-
+        aeronaves.print();
+        rotas.print();
+        aeroportos.print();
     }
 }

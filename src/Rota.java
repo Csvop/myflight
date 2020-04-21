@@ -1,4 +1,6 @@
-public class Rota {
+import java.util.Comparator;
+
+public class Rota implements Contavel{
     private CiaAerea ciaAerea;
     private Aeroporto origem;
     private Aeroporto destino;
@@ -22,7 +24,15 @@ public class Rota {
     public CiaAerea getCiaAerea(){
         return ciaAerea;
     }
-    public int getContRotas(){return contRotas;}
+    public int getCont(){return contRotas;}
+
+    public static Comparator<Rota> compare(){
+        return new Comparator<Rota>(){
+            public int compare(Rota r1, Rota r2){
+                return r1.getCiaAerea().getNome().compareTo(r2.getCiaAerea().getNome());
+            }
+        };
+    }
 
     @Override
     public String toString() {

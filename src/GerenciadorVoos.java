@@ -1,7 +1,8 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
-public class GerenciadorVoos implements Contrato{
+public class GerenciadorVoos {
     private ArrayList<Voo> lista;
 
     private GerenciadorVoos() {lista = new ArrayList<>();}
@@ -47,6 +48,16 @@ public class GerenciadorVoos implements Contrato{
                     }
                 }
             }
+        }
+    }
+
+    public List getList() {
+        return lista;
+    }
+
+    public void print(){
+        for (Object a: lista) {
+            System.out.println(a);
         }
     }
 

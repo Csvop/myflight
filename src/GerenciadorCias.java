@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class GerenciadorCias implements Contrato{
-    private ArrayList<CiaAerea> lista;
+public class GerenciadorCias {
+    private List<CiaAerea> lista;
 
     private GerenciadorCias() {lista = new ArrayList<>();}
 
@@ -32,6 +33,16 @@ public class GerenciadorCias implements Contrato{
                 return c;
         }
         return null;
+    }
+
+    public void print(){
+        for (Object a: lista) {
+            System.out.println(a);
+        }
+    }
+
+    public List getList() {
+        return lista;
     }
 
     @Override
