@@ -1,6 +1,5 @@
 import java.time.LocalDateTime;
 import java.time.Duration;
-import java.util.Collection;
 import java.util.Collections;
 
 public class App {
@@ -50,6 +49,7 @@ public class App {
         System.out.println(aeroportos);
         System.out.println(     rotas);
         System.out.println(      voos);
+
         voos.search("CGR","POA");
 
         Collections.sort(aeronaves.getList(), Aeronave.compare());
