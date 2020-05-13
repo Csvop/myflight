@@ -1,8 +1,10 @@
 public class Geo {
     private double latitude;
     private double longitude;
+    private String cod;
 
-    public Geo(double latitude, double longitude) {
+    public Geo(String cod, double latitude, double longitude) {
+        this.cod=cod;
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -21,7 +23,8 @@ public class Geo {
 
     @Override
     public String toString() {
-        return String.format("[%8s] [%8s] ",
+        return String.format("[%8s] [%8s] [%8s] ",
+                cod,
                 latitude,
                 longitude);
     }
