@@ -20,6 +20,15 @@ public class GerenciadorGeo {
         return instance;
     }
 
+    public Geo searchGeo(String cod) {
+        for (Geo g : lista) {
+            if(g.getCod().equals(cod)) {
+                return g;
+            }
+        }
+        return null;
+    }
+
     public void insert(Geo geo){
         lista.add(geo);
     }

@@ -9,6 +9,18 @@ public class Geo {
         this.longitude = longitude;
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public String getCod() {
+        return cod;
+    }
+
     public static double distancia(Geo pontoA, Geo pontoB){
         double latA=Math.toRadians(pontoA.latitude);
         double latB=Math.toRadians(pontoB.latitude);

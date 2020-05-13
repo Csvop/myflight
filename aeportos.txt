@@ -1,0 +1,5 @@
+POA;Salgado Filho Intl Apt
+GRU;São Paulo Guarulhos Intl Apt
+LIS;Lisbon
+MIA;Miami International Apt
+CGR;Aeroporto de Campo Grande
