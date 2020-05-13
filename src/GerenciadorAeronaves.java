@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +31,21 @@ public class GerenciadorAeronaves {
                 return a;
         }
         return null;
+    }
+    public boolean readFile(String nomeArq) {
+        Path path= Paths.get(nomeArq);
+        try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("utf8"))) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                String[] dados = line.split(";");
+                int cap=Integer.parseInt(dados[2]);
+                insert(new Aeronave(dados[0],dados[1],cap));
+            }
+        }
+        catch (IOException x) {
+            System.err.format("Erro de E/S: %s%n", x);
+        }
+        return true;
     }
 
     public List getList() {

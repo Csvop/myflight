@@ -1,0 +1,4 @@
+733;Boeing 737-300;140
+738;Boeing 737-700;126
+332;Airbus Industries A380;644
+320;Boeing 767-400;304
