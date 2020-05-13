@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_13_05_2020_19_33_[Default_Changelist]" date="1589412797581" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_05_2020_19_33_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 13/05/2020 19:33 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MyFlight/App.class" />
+    <option name="AFTER_PATH" value="out/production/MyFlight/App.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_05_2020_19_33_[Default_Changelist]/App.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MyFlight/GerenciadorAeronaves.class" />
+    <option name="AFTER_PATH" value="out/production/MyFlight/GerenciadorAeronaves.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_05_2020_19_33_[Default_Changelist]/GerenciadorAeronaves.class" />
+  </binary>
+</changelist>
