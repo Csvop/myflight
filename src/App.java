@@ -11,10 +11,11 @@ public class App {
         Geo coord4 = new Geo(25.7933 , -80.2906);
 
         GerenciadorCias ciasAereas = GerenciadorCias.getInstance();
-        ciasAereas.insert(new CiaAerea("G3", "Gol Linhas Aéreas SA"));
+        ciasAereas.readFile("ciasAereas.txt");
+        /*ciasAereas.insert(new CiaAerea("G3", "Gol Linhas Aéreas SA"));
         ciasAereas.insert(new CiaAerea("JJ", "LATAM Linhas Aéreas"));
         ciasAereas.insert(new CiaAerea("TP", "TAP Portugal"));
-        ciasAereas.insert(new CiaAerea("AD", "Azul Linhas Aéreas"));
+        ciasAereas.insert(new CiaAerea("AD", "Azul Linhas Aéreas"));*/
 
         GerenciadorAeronaves aeronaves = GerenciadorAeronaves.getInstance();
         aeronaves.insert(new Aeronave("733", "Boeing 737-300", 140));

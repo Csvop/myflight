@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +49,21 @@ public class GerenciadorCias {
 
     public List getList() {
         return lista;
+    }
+
+    public boolean readFile(String nomeArq) {
+        Path path= Paths.get(nomeArq);
+        try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("utf8"))) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                String[] dados = line.split(";");
+                insert(new CiaAerea(dados[0], dados[1]));
+            }
+        }
+        catch (IOException x) {
+            System.err.format("Erro de E/S: %s%n", x);
+        }
+        return true;
     }
 
     @Override
