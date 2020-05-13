@@ -25,6 +25,7 @@ public class Aeroporto implements Contavel{
             }
         };
     }
+
     @Override
     public String toString() {
         return String.format("[%3s] %30s %25s",

@@ -6,29 +6,33 @@ public class App {
 
     public static void main(String[] args) {
 
-        GerenciadorGeo geGeo= GerenciadorGeo.getInstance();
+        /*GerenciadorGeo geGeo= GerenciadorGeo.getInstance();
         geGeo.readFile("localizacaoAeroportos.txt");
         geGeo.list();
-        /*Geo coord1 = new Geo(-29.9939, -51.1711);
+        Geo coord1 = new Geo(-29.9939, -51.1711);
         Geo coord2 = new Geo(-23.4356, -46.4731);
         Geo coord3 = new Geo(38.7742 , -9.1342 );
-        Geo coord4 = new Geo(25.7933 , -80.2906);*/
+        Geo coord4 = new Geo(25.7933 , -80.2906);
 
         GerenciadorCias ciasAereas = GerenciadorCias.getInstance();
         ciasAereas.readFile("ciasAereas.txt");
-        /*ciasAereas.insert(new CiaAerea("G3", "Gol Linhas Aéreas SA"));
+        ciasAereas.insert(new CiaAerea("G3", "Gol Linhas Aéreas SA"));
         ciasAereas.insert(new CiaAerea("JJ", "LATAM Linhas Aéreas"));
         ciasAereas.insert(new CiaAerea("TP", "TAP Portugal"));
         ciasAereas.insert(new CiaAerea("AD", "Azul Linhas Aéreas"));
 
         GerenciadorAeronaves aeronaves = GerenciadorAeronaves.getInstance();
+
         aeronaves.insert(new Aeronave("733", "Boeing 737-300", 140));
         aeronaves.insert(new Aeronave("738", "Boeing 737-700", 126));
         aeronaves.insert(new Aeronave("332", "Airbus Industries A380", 644));
-        aeronaves.insert(new Aeronave("320", "Boeing 767-400", 304));
+        aeronaves.insert(new Aeronave("320", "Boeing 767-400", 304));*/
 
         GerenciadorAeroportos aeroportos = GerenciadorAeroportos.getInstance();
-        /*aeroportos.insert(new Aeroporto("POA", "Salgado Filho Intl Apt", coord1));
+        aeroportos.readFile("aeroportos.txt");
+        aeroportos.print();
+        /*
+        aeroportos.insert(new Aeroporto("POA", "Salgado Filho Intl Apt", coord1));
         aeroportos.insert(new Aeroporto("GRU", "São Paulo Guarulhos Intl Apt", coord2));
         aeroportos.insert(new Aeroporto("LIS", "Lisbon", coord3));
         aeroportos.insert(new Aeroporto("MIA", "Miami International Apt", coord4));

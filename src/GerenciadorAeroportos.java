@@ -43,8 +43,6 @@ public class GerenciadorAeroportos {
         }
     }
 
-
-
     public boolean readFile(String nomeArq) {
         Path path= Paths.get(nomeArq);
         GerenciadorGeo gerG = GerenciadorGeo.getInstance();
@@ -65,8 +63,8 @@ public class GerenciadorAeroportos {
     public String toString(){
         String ax = "Gerenciador de Aeroportos\n _______________________ \n";
         ax+=String.format("%3s %29s %12s %10s", "Código","Nome","Latitiude","Longitude")+"\n";
-        for (Aeroporto b: lista) {
-            ax += b.toString()+"\n";
+        for (Aeroporto a: lista) {
+            ax += a.toString()+"\n";
         }
         return ax;
     }
