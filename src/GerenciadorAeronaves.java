@@ -48,10 +48,6 @@ public class GerenciadorAeronaves {
         return true;
     }
 
-    public List getList() {
-        return lista;
-    }
-
     public void print(){
         for (Object a: lista) {
             System.out.println(a);
