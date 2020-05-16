@@ -8,29 +8,22 @@ public class App {
 
         GerenciadorGeo geGeo= GerenciadorGeo.getInstance();
         geGeo.readFile("localizacaoAeroportos.txt");
-        geGeo.list();
 
         GerenciadorCias ciasAereas = GerenciadorCias.getInstance();
         ciasAereas.readFile("ciasAereas.txt");
-        ciasAereas.print();
 
         GerenciadorAeronaves aeronaves = GerenciadorAeronaves.getInstance();
         aeronaves.readFile("aeronaves.txt");
-        aeronaves.print();
 
         GerenciadorAeroportos aeroportos = GerenciadorAeroportos.getInstance();
         aeroportos.readFile("aeroportos.txt");
-        aeroportos.print();
-
 
         GerenciadorRotas rotas = GerenciadorRotas.getInstance();
         rotas.readFile("rotas.txt");
-        rotas.print();
 
         GerenciadorVoos voos = GerenciadorVoos.getInstance();
         voos.readFile("voos.txt");
-        voos.print();
-/*
+
         System.out.println(ciasAereas);
         System.out.println( aeronaves);
         System.out.println(aeroportos);
@@ -45,7 +38,7 @@ public class App {
 
         aeronaves.print();
         rotas.print();
-        aeroportos.print();*/
+        aeroportos.print();
 
     }
 }

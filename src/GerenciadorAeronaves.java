@@ -53,6 +53,9 @@ public class GerenciadorAeronaves {
             System.out.println(a);
         }
     }
+    public List getList() {
+        return lista;
+    }
 
     @Override
     public String toString(){
