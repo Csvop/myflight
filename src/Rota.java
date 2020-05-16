@@ -6,9 +6,11 @@ public class Rota implements Contavel{
     private Aeroporto destino;
     private Aeronave aeronave;
     private static int contRotas;
+    private int cod_rota;
 
-    public Rota(CiaAerea ciaAerea, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
+    public Rota(int cod_rota,CiaAerea ciaAerea, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
         contRotas++;
+        this.cod_rota=cod_rota;
         this.aeronave = aeronave;
         this.origem = origem;
         this.destino = destino;
@@ -36,7 +38,8 @@ public class Rota implements Contavel{
 
     @Override
     public String toString() {
-        return String.format("%8s %10s %10s %10s",
+        return String.format("%8s %8s %10s %10s %10s",
+                cod_rota,
                 ciaAerea.getCodigo(),
                 origem.getCodigo(),
                 destino.getCodigo(),

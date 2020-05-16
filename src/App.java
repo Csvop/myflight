@@ -22,15 +22,12 @@ public class App {
         aeroportos.readFile("aeroportos.txt");
         aeroportos.print();
 
-        /*
-        GerenciadorRotas rotas = GerenciadorRotas.getInstance();
-        Rota r0=new Rota(ciasAereas.search("AD"),aeroportos.search("CGR"),aeroportos.search("GRU"),aeronaves.search("320"));
-        Rota r1=new Rota(ciasAereas.search("G3"),aeroportos.search("GRU"),aeroportos.search("POA"),aeronaves.search("738"));
-        Rota r2=new Rota(ciasAereas.search("G3"),aeroportos.search("POA"),aeroportos.search("GRU"),aeronaves.search("738"));
-        Rota r3=new Rota(ciasAereas.search("TP"),aeroportos.search("MIA"),aeroportos.search("LIS"),aeronaves.search("332"));
-        Rota r4=new Rota(ciasAereas.search("JJ"),aeroportos.search("GRU"),aeroportos.search("LIS"),aeronaves.search("320"));
-        rotas.insert(r0);rotas.insert(r1);rotas.insert(r2);rotas.insert(r3);rotas.insert(r4);
 
+        GerenciadorRotas rotas = GerenciadorRotas.getInstance();
+        rotas.readFile("rotas.txt");
+        rotas.print();
+
+/*
         GerenciadorVoos voos = GerenciadorVoos.getInstance();
         Voo v0=new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r0, Voo.Status.ATRASADO  );
         Voo v1=new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r2, Voo.Status.CANCELADO  );

@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +49,25 @@ public class GerenciadorRotas {
         for (Object a: lista) {
             System.out.println(a);
         }
+    }
+
+    public boolean readFile(String nomeArq) {
+        Path path= Paths.get(nomeArq);
+        GerenciadorCias ciasAereas = GerenciadorCias.getInstance();
+        GerenciadorAeronaves aeronaves = GerenciadorAeronaves.getInstance();
+        GerenciadorAeroportos aeroportos = GerenciadorAeroportos.getInstance();
+        try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("utf8"))) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                String[] dados = line.split(";");
+                int cod_rota=Integer.parseInt(dados[0]);
+                insert(new Rota(cod_rota,ciasAereas.search(dados[1]),aeroportos.search(dados[2]),aeroportos.search(dados[3]),aeronaves.search(dados[4])));
+            }
+        }
+        catch (IOException x) {
+            System.err.format("Erro de E/S: %s%n", x);
+        }
+        return true;
     }
 
     @Override
