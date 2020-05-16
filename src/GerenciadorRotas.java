@@ -33,6 +33,14 @@ public class GerenciadorRotas {
         return null;
     }
 
+    public Rota getRota(int codRota) {
+        for(Rota r:lista){
+            if(r.getCod_rota()==codRota)
+                return r;
+        }
+        return null;
+    }
+
     public Rota searchDestino(Aeroporto destino){
         for(Rota r:lista){
             if(r.getDestino()==destino)

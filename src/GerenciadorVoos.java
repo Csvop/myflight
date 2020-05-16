@@ -1,3 +1,10 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +21,32 @@ public class GerenciadorVoos {
             instance= new GerenciadorVoos();
         }
         return instance;
+    }
+
+    public boolean readFile(String nomeArq) {
+        Path path= Paths.get(nomeArq);
+        GerenciadorRotas gRota = GerenciadorRotas.getInstance();
+        Voo voo = new Voo();
+        try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("utf8"))) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                String[] dados = line.split(";");
+                int ano =Integer.parseInt(dados[0]);
+                int mes=Integer.parseInt(dados[1]);
+                int dia=Integer.parseInt(dados[2]);
+                int hora=Integer.parseInt(dados[3]);
+                int minuto=Integer.parseInt(dados[4]);
+                int duracao=Integer.parseInt(dados[5]);
+                int cod_rota = Integer.parseInt(dados[6]);
+                int cod_status=Integer.parseInt(dados[7]);
+                insert(new Voo(LocalDateTime.of(ano, mes, dia, hora,minuto), Duration.ofMinutes(duracao) , gRota.getRota(cod_rota), voo.getStatus(cod_status)));
+            }
+        }
+
+        catch (IOException x) {
+            System.err.format("Erro de E/S: %s%n", x);
+        }
+        return true;
     }
 
     public void insert(Voo voo){

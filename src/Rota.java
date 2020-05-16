@@ -17,6 +17,10 @@ public class Rota implements Contavel{
         this.ciaAerea = ciaAerea;
     }
 
+    public int getCod_rota() {
+        return cod_rota;
+    }
+
     public Aeroporto getOrigem(){
         return origem;
     }

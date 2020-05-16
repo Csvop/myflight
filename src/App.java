@@ -27,14 +27,10 @@ public class App {
         rotas.readFile("rotas.txt");
         rotas.print();
 
-/*
         GerenciadorVoos voos = GerenciadorVoos.getInstance();
-        Voo v0=new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r0, Voo.Status.ATRASADO  );
-        Voo v1=new Voo(LocalDateTime.of(2016, 8, 10, 8,  0), Duration.ofMinutes(90) ,r2, Voo.Status.CANCELADO  );
-        Voo v2=new Voo(LocalDateTime.of(2016, 8, 10, 15, 0), Duration.ofMinutes(120),r3, Voo.Status.CONFIRMADO);
-        Voo v3=new Voo(LocalDateTime.of(2016, 8, 15, 12, 0), Duration.ofMinutes(120),r1, Voo.Status.CONFIRMADO );
-        voos.insert(v0);voos.insert(v1);voos.insert(v2);voos.insert(v3);
-
+        voos.readFile("voos.txt");
+        voos.print();
+/*
         System.out.println(ciasAereas);
         System.out.println( aeronaves);
         System.out.println(aeroportos);

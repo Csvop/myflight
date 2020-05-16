@@ -18,6 +18,8 @@ public class Voo implements Contavel{
         this.status = status;
     }
 
+    public Voo(){}
+
     public Voo(Duration duracao, Rota rota, Status status) {
         contVoos++;
         this.datahora=LocalDateTime.of(2016, 8, 12, 12,  0);
@@ -34,6 +36,16 @@ public class Voo implements Contavel{
         return rota;
     }
     public Status getStatus(){return status;}
+    public Status getStatus(int cod_status) {
+       if(cod_status == 1) {
+           return Status.CONFIRMADO;
+       } else if(cod_status == 2) {
+           return Status.ATRASADO;
+       } else {
+           return Status.CANCELADO;
+       }
+   }
+
     public int getCont(){return contVoos;}
 
     @Override
