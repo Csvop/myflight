@@ -1,13 +1,8 @@
-import java.time.LocalDateTime;
-import java.time.Duration;
 import java.util.Collections;
-//ab
+
 public class App {
 
     public static void main(String[] args) {
-
-        GerenciadorGeo geGeo= GerenciadorGeo.getInstance();
-        geGeo.readFile("localizacaoAeroportos.txt");
 
         GerenciadorCias ciasAereas = GerenciadorCias.getInstance();
         ciasAereas.readFile("ciasAereas.txt");
@@ -30,15 +25,23 @@ public class App {
         System.out.println(     rotas);
         System.out.println(      voos);
 
+        System.out.println("Rotas de CGR a POA");
+        System.out.println("------------------");
         voos.search("CGR","POA");
 
+        System.out.println("\nOrdenação das aeronaves por capacidade");
+        System.out.println("---------------------------------------");
         Collections.sort(aeronaves.getList(), Aeronave.compare());
-        Collections.sort(rotas.getList(), Rota.compare());
-        Collections.sort(aeroportos.getList(), Aeroporto.compare());
-
         aeronaves.print();
-        rotas.print();
-        aeroportos.print();
 
+        System.out.println("\nOrdenação das rotas por orderm alfabetica das copanhias aereas");
+        System.out.println("--------------------------------------------------------------");
+        Collections.sort(rotas.getList(), Rota.compare());
+        rotas.print();
+
+        System.out.println("\nOrdenação alfabetica dos aeroportos");
+        System.out.println("-----------------------------------");
+        Collections.sort(aeroportos.getList(), Aeroporto.compare());
+        aeroportos.print();
     }
 }

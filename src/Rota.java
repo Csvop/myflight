@@ -42,7 +42,7 @@ public class Rota implements Contavel{
 
     @Override
     public String toString() {
-        return String.format("%8s %8s %10s %10s %10s",
+        return String.format("%8s %10s %10s %10s %10s",
                 cod_rota,
                 ciaAerea.getCodigo(),
                 origem.getCodigo(),

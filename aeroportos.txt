@@ -1,5 +1,5 @@
-POA;Salgado Filho Intl Apt
-GRU;São Paulo Guarulhos Intl Apt
-LIS;Lisbon
-MIA;Miami International Apt
-CGR;Aeroporto de Campo Grande
+POA;Salgado Filho Intl Apt;-29.9939;-51.1711
+GRU;São Paulo Guarulhos Intl Apt;-23.4356;-46.4731
+LIS;Lisbon;-55.4356;-13.4731
+MIA;Miami International Apt;-6.4356;4.4731
+CGR;Aeroporto de Campo Grande;-45.4356;27.3542

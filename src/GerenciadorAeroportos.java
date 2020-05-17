@@ -45,12 +45,13 @@ public class GerenciadorAeroportos {
 
     public boolean readFile(String nomeArq) {
         Path path= Paths.get(nomeArq);
-        GerenciadorGeo gerG = GerenciadorGeo.getInstance();
         try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("utf8"))) {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 String[] dados = line.split(";");
-                insert(new Aeroporto(dados[0],dados[1],gerG.searchGeo(dados[0])));
+                double lat=Double.parseDouble(dados[2]);
+                double lon=Double.parseDouble(dados[3]);
+                insert(new Aeroporto(dados[0],dados[1],new Geo(lat ,lon)));
             }
         }
         catch (IOException x) {
